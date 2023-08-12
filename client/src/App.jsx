@@ -4,6 +4,9 @@ import IndexPage from './pages/IndexPage.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 import Layout from './Layout';
 import RegisterPage from './pages/RegisterPage';
+import axios from "axios";
+
+axios.defaults.baseURL = 'http://localhost:4000';
 
 function App() {
   return (
@@ -19,4 +22,4 @@ function App() {
 
 export default App
 
-//left off at 43:03
+//left off at 1:18:29
