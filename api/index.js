@@ -2,18 +2,19 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require("mongoose");
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 const User = require('./models/User.js');
 require('dotenv').config();
 const app = express();
 
 const bcryptSalt = bcrypt.genSaltSync(10);
+const jwtSecret = 'lmnopabclmnopabc'
 
 app.use(express.json());
 app.use(cors({
     credentials: true,
     origin: 'http://127.0.0.1:5173',
   }));
-
 
 mongoose.connect(process.env.MONGO_URL);
 
@@ -47,12 +48,19 @@ app.post('/login', async(req, res) => {
     if(userDoc) {
         const passOk = bcrypt.compareSync(password, userDoc.password)
         if (passOk) {
-            res.json('pass ok')
+            jwt.sign({email:userDoc.email, id:userDoc._id}, jwtSecret, {}, (err,token) => {
+                if (err) throw err;
+                res.cookie('token', token).json('pass ok')
+                console.log("Pass ok")
+            })
         } else {
+
             res.status(422).json('pass not ok')
+            console.log("Pass not ok")
         }
     } else {
         res.json('not found')
+        
     }
 })
 
