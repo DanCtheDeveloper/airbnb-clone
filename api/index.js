@@ -22,6 +22,10 @@ app.get('/test', (req,res) =>{
     res.json('test ok')
 })
 
+app.get('/places', (req, res) =>{
+    res.json('Get Places')
+})
+
 app.post('/register', async (req,res) => {
     const {name, email, password} = req.body;
 
