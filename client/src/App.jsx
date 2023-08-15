@@ -7,22 +7,24 @@ import RegisterPage from './pages/RegisterPage';
 import axios from "axios";
 import AccountPage from './pages/AccountPage';
 
-axios.defaults.baseURL = 'http://localhost:4000';
+axios.defaults.baseURL = 'http://127.0.0.1:4000';
+axios.defaults.withCredentials = true;
+import {UserContextProvider} from "./UserContext";
 
 function App() {
   return (
+    <UserContextProvider>
     <Routes>
-      <Route path="/" element={<Layout />}> 
-      <Route index element={<IndexPage />} />
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/register" element={<RegisterPage />} />
-      <Route path='/account' element={<AccountPage />} />
-      <Route path='/account/:subPage?' element={<AccountPage />} />
-      </Route>
-    </Routes>
+        <Route path="/" element={<Layout />}> 
+        <Route index element={<IndexPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        </Route>
+      </Routes>
+    </UserContextProvider>
   )
 }
 
 export default App
 
-//left off at 1:18:29
+//Dan - left off at 1:48:00
