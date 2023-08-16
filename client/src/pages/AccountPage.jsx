@@ -20,7 +20,7 @@ export default function AccountPage() {
   }
 
   if (!ready) {
-    return 'Checking the breeze...';
+    return 'Loading Your Stay Breeze...';
   }
 
   if (ready && !user && !redirect) {
