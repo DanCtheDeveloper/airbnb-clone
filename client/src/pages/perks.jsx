@@ -1,5 +1,3 @@
-
-
 export default function Perks({selected,OnChange}) {
   function handleCBClick(ev) {
     const {checked,name} = ev.target
