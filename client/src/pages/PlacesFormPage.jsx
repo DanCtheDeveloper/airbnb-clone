@@ -1,6 +1,6 @@
 import AccountNav from "../AccountNav.jsx";
 import PhotosUploader from "../PhotosUploader.jsx";
-import Perks from "../perks.jsx";
+import Perks from "./perks.jsx";
 import {useState} from "react";
 import axios from "axios";
 
