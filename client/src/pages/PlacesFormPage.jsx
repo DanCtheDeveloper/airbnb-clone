@@ -1,7 +1,8 @@
 import AccountNav from "../AccountNav.jsx";
 import PhotosUploader from "../PhotosUploader.jsx";
-// import Perks from "../Perks.jsx";
+import Perks from "../perks.jsx";
 import {useState} from "react";
+import axios from "axios";
 
 export default function PlacesFormPage() {
     const [title,setTitle] = useState('');
@@ -56,7 +57,7 @@ export default function PlacesFormPage() {
           {preInput('Address','Address to Location')}
           <input type="text" value={address} onChange={ev => setAddress(ev.target.value)} placeholder="address" />
           {preInput('Photos','more = better')}
-          <PhotosUploader />
+          <PhotosUploader addedPhotos={addedPhotos} onChange={setAddedPhotos} />
           {preInput('Description','description of location')}
           <textarea value={description} onChange={ev => setDescription(ev.target.value)}/>
               {preInput('Perks','Select any perks that make your spot a breeze')}
