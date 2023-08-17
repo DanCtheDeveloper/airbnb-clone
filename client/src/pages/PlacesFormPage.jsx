@@ -2,6 +2,7 @@ import AccountNav from "../AccountNav.jsx";
 import PhotosUploader from "../PhotosUploader.jsx";
 // import Perks from "../Perks.jsx";
 import {useState} from "react";
+import axios from "axios";
 
 export default function PlacesFormPage() {
     const [title,setTitle] = useState('');
