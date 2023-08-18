@@ -24,7 +24,7 @@ app.use(cookieParser());
 app.use('/uploads', express.static(__dirname+'/uploads'));
 app.use(cors({
   credentials: true,
-  origin: 'http://127.0.0.1:5173',
+  origin: 'http://127.0.0.1:4000',
 }));
 
 async function uploadToS3(path, originalFilename, mimetype) {
@@ -41,13 +41,13 @@ async function uploadToS3(path, originalFilename, mimetype) {
     const newFileName = Date.now() + '.' + ext;
     console.log({path,parts,ext,newFileName});
     const data = await client.send(new PutObjectCommand({
-      Bucket: 'dawid-test-booking',
+      Bucket: 'jons-test-booking',
       Body: fs.readFileSync(path),
       ACL: 'public-read',
       Key: newFileName,
       ContentType: mimetype,
     }));
-    resolve(`https://dawid-test-booking.s3.amazonaws.com/${newFileName}`);
+    resolve(`http://jons-test-booking.s3-website-us-east-1.amazonaws.com//${newFileName}`);
   });
 }
 
