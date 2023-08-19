@@ -32,7 +32,7 @@ export default function RegisterPage() {
           />
           <input
             type="email"
-            placeholder="your@email.com"
+            placeholder="johndoe@email.com"
             value={email}
             onChange={(ev) => setEmail(ev.target.value)}
           />

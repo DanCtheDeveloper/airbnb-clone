@@ -1,7 +1,7 @@
 import AccountNav from "../AccountNav";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import PlaceImg from "./PlaceImg.jsx";
+import PlaceImg from "../PlaceImg";
 import { differenceInCalendarDays, format } from "date-fns";
 import { Link } from "react-router-dom";
 import BookingDates from "../BookingDates";
