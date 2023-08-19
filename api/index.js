@@ -46,7 +46,7 @@ async function uploadToS3(path, originalFilename, mimetype) {
       Key: newFileName,
       ContentType: mimetype,
     }));
-    resolve(`https://dawid-test-booking.s3.amazonaws.com/${newFileName}`);
+    resolve(`http://jons-test-booking.s3-website-us-east-1.amazonaws.com/${newFileName}`);
   });
 }
 
