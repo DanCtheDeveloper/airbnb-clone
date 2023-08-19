@@ -18,3 +18,9 @@ button.primary {
   background-color: #16c5f5;
   @apply bg-primary p-2 w-full text-white rounded-2xl;
 }
+
+.bg-site-bg {
+  background-image: url('src/assets/sonny-mauricio-kIr8e-01eAw-unsplash.jpg'); /* Adjust the path to your image */
+  background-size: cover;
+  background-repeat: no-repeat;
+}

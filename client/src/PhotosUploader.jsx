@@ -49,7 +49,7 @@ export default function PhotosUploader({ addedPhotos, onChange }) {
         />
         <button
           onClick={addPhotoByLink}
-          className="bg-gray-200 px-4 rounded-2xl"
+          className="bg-gray-200 px-4 rounded-2xl primary"
         >
           Add&nbsp;photo
         </button>

@@ -1,0 +1,5 @@
+.bg-site-bg {
+  background-image: url('src/assets/sonny-mauricio-kIr8e-01eAw-unsplash.jpg'); /* Adjust the path to your image */
+  background-size: cover;
+  background-repeat: no-repeat;
+}

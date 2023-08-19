@@ -6,9 +6,11 @@ import { BrowserRouter } from "react-router-dom";
 import axios from "axios";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
+  <div className="bg-site-bg">
   <React.StrictMode>
     <BrowserRouter>
       <App />
     </BrowserRouter>
   </React.StrictMode>
+  </div>
 );
