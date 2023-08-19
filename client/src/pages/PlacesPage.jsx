@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import AccountNav from "../AccountNav";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import "../index.css";
 export default function PlacesPage() {
   const [places, setPlaces] = useState([]);
   useEffect(() => {

@@ -12,6 +12,7 @@ import PlacesFormPage from "./pages/PlacesFormPage";
 import PlacePage from "./pages/PlacePage";
 import BookingsPage from "./pages/BookingsPage";
 import BookingPage from "./pages/BookingPage";
+import './App.css'; 
 
 axios.defaults.baseURL =
   import.meta.env.VITE_API_URL || "http://127.0.0.1:4000";

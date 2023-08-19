@@ -84,12 +84,12 @@ export default function PlacesFormPage() {
   }
 
   return (
-    <div>
+    <div className="bg-site-bg">
       <AccountNav />
       <form onSubmit={savePlace}>
         {preInput(
           "Title",
-          "Title for your place. should be short and catchy as in advertisement"
+          "Make a memorable title for your place"
         )}
         <input
           type="text"
@@ -97,14 +97,14 @@ export default function PlacesFormPage() {
           onChange={(ev) => setTitle(ev.target.value)}
           placeholder="title, for example: My lovely apt"
         />
-        {preInput("Address", "Address to this place")}
+        {preInput("Address", "Address to your unique location")}
         <input
           type="text"
           value={address}
           onChange={(ev) => setAddress(ev.target.value)}
           placeholder="address"
         />
-        {preInput("Photos", "more = better")}
+        {preInput("Photos", "Add Beautiful photos of your place")}
         <PhotosUploader addedPhotos={addedPhotos} onChange={setAddedPhotos} />
         {preInput("Description", "description of the place")}
         <textarea
@@ -122,7 +122,7 @@ export default function PlacesFormPage() {
         />
         {preInput(
           "Check in&out times",
-          "add check in and out times, remember to have some time window for cleaning the room between guests"
+          "add check in and out times, remember to have some time window for cleaning the Location between guests"
         )}
         <div className="grid gap-2 grid-cols-2 md:grid-cols-4">
           <div>
@@ -131,7 +131,7 @@ export default function PlacesFormPage() {
               type="text"
               value={checkIn}
               onChange={(ev) => setCheckIn(ev.target.value)}
-              placeholder="14"
+              placeholder="8:00 a.m."
             />
           </div>
           <div>
@@ -140,7 +140,7 @@ export default function PlacesFormPage() {
               type="text"
               value={checkOut}
               onChange={(ev) => setCheckOut(ev.target.value)}
-              placeholder="11"
+              placeholder="3:00 p.m."
             />
           </div>
           <div>
@@ -152,11 +152,12 @@ export default function PlacesFormPage() {
             />
           </div>
           <div>
-            <h3 className="mt-2 -mb-1">Price per night</h3>
+            <h3 className="mt-2 -mb-1">Price per night (USD) </h3>
             <input
               type="number"
               value={price}
               onChange={(ev) => setPrice(ev.target.value)}
+              placeholder="$350.00 USD"
             />
           </div>
         </div>
