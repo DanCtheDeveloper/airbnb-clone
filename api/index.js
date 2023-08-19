@@ -78,8 +78,6 @@ app.post(API_BASE_URL + '/register', async (req,res) => {
   } catch (e) {
     res.status(422).json(e);
   }
-
-
 });
 
 app.post(API_BASE_URL + '/login', async (req,res) => {
