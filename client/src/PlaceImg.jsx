@@ -1,3 +1,5 @@
+import Image from "./Image.jsx";
+
 export default function PlaceImg({ place, index = 0, className = null }) {
   if (!place.photos?.length) {
     return "";
@@ -5,11 +7,5 @@ export default function PlaceImg({ place, index = 0, className = null }) {
   if (!className) {
     className = "object-cover";
   }
-  return (
-    <img
-      className={className}
-      src={"http://localhost:5173/uploads/" + place.photos[index]}
-      alt=""
-    />
-  );
+  return <Image className={className} src={place.photos[index]} alt="" />;
 }

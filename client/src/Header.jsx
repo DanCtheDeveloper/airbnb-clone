@@ -1,6 +1,6 @@
-import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { UserContext } from "./UserContext";
+import { useContext } from "react";
+import { UserContext } from "./UserContext.jsx";
 
 export default function Header() {
   const { user } = useContext(UserContext);
@@ -21,7 +21,7 @@ export default function Header() {
             d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
           />
         </svg>
-        <span className="font-bold text-xl">StayBreeze</span>
+        <span className="font-bold text-xl">airbnb</span>
       </Link>
       <div className="flex gap-2 border border-gray-300 rounded-full py-2 px-4 shadow-md shadow-gray-300">
         <div>Anywhere</div>
@@ -48,7 +48,7 @@ export default function Header() {
       </div>
       <Link
         to={user ? "/account" : "/login"}
-        className="flex items-center gap-2 border border-gray-300 rounded-full py-2 px-4 shadow-md shadow-gray-300"
+        className="flex items-center gap-2 border border-gray-300 rounded-full py-2 px-4 "
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
