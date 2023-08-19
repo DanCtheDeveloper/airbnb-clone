@@ -1,5 +1,5 @@
 import PhotosUploader from "../PhotosUploader.jsx";
-import Perks from "../Perks.jsx";
+import Perks from "./perks.jsx";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import AccountNav from "../AccountNav";

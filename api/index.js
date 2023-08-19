@@ -16,13 +16,14 @@ require("dotenv").config();
 
 // Add Access Control Allow Origin headers
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173/"); // Replace with your site's URL
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
   );
   next();
 });
+
 
 const API_BASE_URL = process.env.API_BASE_URL || "";
 const bcryptSalt = bcrypt.genSaltSync(10);
