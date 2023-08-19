@@ -1,54 +1,50 @@
-import { Link, useParams } from "react-router-dom";
-import AccountNav from "../AccountNav";
-import { useEffect, useState } from "react";
+import {Link, useParams} from "react-router-dom";
+import {useEffect, useState} from "react";
 import axios from "axios";
-import PlaceImg from "../PlaceImg";
-export default function PlacesPage() {
-  const [places, setPlaces] = useState([]);
+import BookingWidget from "../BookingWidget";
+import PlaceGallery from "../PlaceGallery";
+import AddressLink from "../AddressLink";
+
+export default function PlacePage() {
+  const {id} = useParams();
+  const [place,setPlace] = useState(null);
   useEffect(() => {
-    axios.get("/user-places").then(({ data }) => {
-      setPlaces(data);
+    if (!id) {
+      return;
+    }
+    axios.get(`/places/${id}`).then(response => {
+      setPlace(response.data);
     });
-  }, []);
+  }, [id]);
+
+  if (!place) return '';
+
+
+
   return (
-    <div>
-      <AccountNav />
-      <div className="text-center">
-        <Link
-          className="inline-flex gap-1 bg-primary text-white py-2 px-6 rounded-full"
-          to={"/account/places/new"}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              fillRule="evenodd"
-              d="M12 3.75a.75.75 0 01.75.75v6.75h6.75a.75.75 0 010 1.5h-6.75v6.75a.75.75 0 01-1.5 0v-6.75H4.5a.75.75 0 010-1.5h6.75V4.5a.75.75 0 01.75-.75z"
-              clipRule="evenodd"
-            />
-          </svg>
-          Add new place
-        </Link>
+    <div className="mt-4 bg-gray-100 -mx-8 px-8 pt-8">
+      <h1 className="text-3xl">{place.title}</h1>
+      <AddressLink>{place.address}</AddressLink>
+      <PlaceGallery place={place} />
+      <div className="mt-8 mb-8 grid gap-8 grid-cols-1 md:grid-cols-[2fr_1fr]">
+        <div>
+          <div className="my-4">
+            <h2 className="font-semibold text-2xl">Description</h2>
+            {place.description}
+          </div>
+          Check-in: {place.checkIn}<br />
+          Check-out: {place.checkOut}<br />
+          Max number of guests: {place.maxGuests}
+        </div>
+        <div>
+          <BookingWidget place={place} />
+        </div>
       </div>
-      <div className="mt-4">
-        {places.length > 0 &&
-          places.map((place) => (
-            <Link
-              to={"/account/places/" + place._id}
-              className="flex cursor-pointer gap-4 bg-gray-100 p-4 rounded-2xl"
-            >
-              <div className="flex w-32 h-32 bg-gray-300 grow shrink-0">
-                <PlaceImg place={place} />
-              </div>
-              <div className="grow-0 shrink">
-                <h2 className="text-xl">{place.title}</h2>
-                <p className="text-sm mt-2">{place.description}</p>
-              </div>
-            </Link>
-          ))}
+      <div className="bg-white -mx-8 px-8 py-8 border-t">
+        <div>
+          <h2 className="font-semibold text-2xl">Extra info</h2>
+        </div>
+        <div className="mb-4 mt-2 text-sm text-gray-700 leading-5">{place.extraInfo}</div>
       </div>
     </div>
   );

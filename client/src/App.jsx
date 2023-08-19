@@ -18,7 +18,8 @@ axios.defaults.withCredentials = true;
 
 function App() {
   return (
-    <UserContextProvider>
+    <div>
+          <UserContextProvider>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<IndexPage />} />
@@ -34,6 +35,10 @@ function App() {
         </Route>
       </Routes>
     </UserContextProvider>
+
+      <Layout/>
+    </div>
+
   )
 }
 

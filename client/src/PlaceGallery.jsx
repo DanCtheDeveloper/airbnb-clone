@@ -1,13 +1,8 @@
 import { useState } from "react";
+import Image from "./Image.jsx";
 
 export default function PlaceGallery({ place }) {
   const [showAllPhotos, setShowAllPhotos] = useState(false);
-
-  function photoLink(photo) {
-    return photo.includes("://")
-      ? "" + photo
-      : "http://localhost:4000/uploads/" + photo;
-  }
 
   if (showAllPhotos) {
     return (
@@ -37,7 +32,7 @@ export default function PlaceGallery({ place }) {
           {place?.photos?.length > 0 &&
             place.photos.map((photo) => (
               <div>
-                <img src={photoLink(photo)} alt="" />
+                <Image src={photo} alt="" />
               </div>
             ))}
         </div>
@@ -51,10 +46,10 @@ export default function PlaceGallery({ place }) {
         <div>
           {place.photos?.[0] && (
             <div>
-              <img
+              <Image
                 onClick={() => setShowAllPhotos(true)}
                 className="aspect-square cursor-pointer object-cover"
-                src={photoLink(place.photos[0])}
+                src={place.photos[0]}
                 alt=""
               />
             </div>
@@ -62,19 +57,19 @@ export default function PlaceGallery({ place }) {
         </div>
         <div className="grid">
           {place.photos?.[1] && (
-            <img
+            <Image
               onClick={() => setShowAllPhotos(true)}
               className="aspect-square cursor-pointer object-cover"
-              src={photoLink(place.photos[1])}
+              src={place.photos[1]}
               alt=""
             />
           )}
           <div className="overflow-hidden">
             {place.photos?.[2] && (
-              <img
+              <Image
                 onClick={() => setShowAllPhotos(true)}
                 className="aspect-square cursor-pointer object-cover relative top-2"
-                src={photoLink(place.photos[2])}
+                src={place.photos[2]}
                 alt=""
               />
             )}
