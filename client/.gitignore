@@ -12,6 +12,13 @@ dist
 dist-ssr
 *.local
 
+.idea
+api/node_modules
+api/.env
+api/uploads/*
+!api/uploads/.gitignore
+.vercel
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
