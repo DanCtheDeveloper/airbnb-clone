@@ -1,0 +1,161 @@
+// const places = [
+//   {
+//     title: 'Tranquil Opulence Manor',
+//     address: '456 Opulent Lane, Luxe Haven, Prestige Province',
+//     photos: ['src/assets/Places for project/Luxury-Villa/d31c2aad-9a5c-431b-a80f-2a50a657eb6d.png', 'src/assets/Places for project/Luxury-Villa/a807d304-1ff0-45d7-bb45-04dd6f81f586.jpg'],
+//     description: 'Welcome to 456 Opulent Lane, where Villa Serenitá awaits to envelop you in a world of unparalleled luxury. Nestled in the heart of Luxe Haven, this opulent villa offers...',
+//     perks: [''],
+//     extraInfo: 'No pets are allowed on the villa premises. Smoking is not permitted indoors; smoking areas are provided. Kindly treat the villa\'s amenities and furnishings with care. Maintain a respectful noise level, especially during nighttime hours.',
+//     checkIn: 1500,
+//     checkOut: 1500,
+//     maxGuests: 6,
+//     price: 250,
+//   },
+//   {
+//     title: 'Coral Cove Villa',
+//     address: '123 Sun Ray Avenue, Azure Cove, Coastal Paradise',
+//     photos: ['src/assets/Places for project/CoralCove-Villa/d9910b92-1455-4735-9e93-c169b6d59713.png', 'src/assets/Places for project/CoralCove-Villa/9e07995d-e8e1-4c4d-a197-981270b98eec.jpg'],
+//     description: 'Welcome to 123 Sunray Avenue, where coastal dreams come to life at Seaside Elegance Estate. This exquisite beachfront luxury home offers a harmonious blend...',
+//     perks: [''],
+//     extraInfo: 'Smoking is prohibited indoors; designated outdoor areas only. Please follow beach guidelines for waste disposal.',
+//     checkIn: 1100,
+//     checkOut: 1700,
+//     maxGuests: 10,
+//     price: 350,
+//   },
+//   {
+//     title: 'Dragon Lair Sanctuary',
+//     address: '456 Regal Court, Kingston upon Glen, Medievalshire',
+//     photos: ['src/assets/thelair.jpg', 'src/assets/DLS-livingroom.jpg'],
+//     description: 'Step into a realm of regal charm and enchantment at 456 Regal Court, Eldenshire Castle. This meticulously restored medieval castle transports you back in time...',
+//     perks: [''],
+//     extraInfo: 'No pets allowed within the castle grounds. Smoking is not permitted inside the castle. Kindly handle the historical artifacts and decor with care. Please observe the castle\'s visiting hours for private sections.',
+//     checkIn: 1200,
+//     checkOut: 1200,
+//     maxGuests: 4,
+//     price: 500,
+//   },
+//   {
+//     title: 'Serene Canyon Haven',
+//     address: '789 Serenity Way, Tranquil Canyon, Nature Haven',
+//     photos: ['src/assets/Places for project/SereneCanyon-Haven/8752df71-1cf3-4eb1-a795-a808d7032f33.png', 'src/assets/Places for project/SereneCanyon-Haven/1e6a9874-97e4-4dbd-8953-608ab4c6afc3.png'],
+//     description: 'Elevate your senses at 789 Serenity Way, Canyon Vista Retreat. Tucked away in the heart of nature\'s grandeur, this canyon haven offers a sanctuary of peace...',
+//     perks: [''],
+//     extraInfo: 'No pets allowed in the canyon retreat. Smoking is restricted to designated outdoor areas. Preserve the natural beauty of the surroundings; no littering. Respect quiet hours between 11:00 PM and 7:00 AM.',
+//     checkIn: 1100,
+//     checkOut: 1100,
+//     maxGuests: 8,
+//     price: 250,
+//   },  {
+//     title: 'Frostpeak Alpine Haven',
+//     address: '567 Frost Peak Lane, Snowfall Valley, Mountain Bliss',
+//     photos: ['src/assets/Places for project/Snow-Ridge/85d93c37-3208-426f-9051-65ddbedf838a.png, src/assets/Places for project/Snow-Ridge/ea2f662e-4e7b-4106-97b3-40837b06d86f.png'],
+//     description: 'Escape to the enchanting beauty of Snowfall Valley and discover the ultimate winter wonderland at 567 Frost Peak Lane. Nestled in the heart of the majestic mountains...',
+//     perks: [''],
+//     extraInfo: 'Smoking is only allowed in the designated outdoor space. Please be cautious during winter weather conditions. Keep noise levels respectful of neighboring guests.',
+//     checkIn: 3,
+//     checkOut: 11,
+//     maxGuests: 6,
+//     price: 300,
+//   },  {
+//     title: 'Azure Isle Retreat',
+//     address: '123 Palm Cove Lane, Coral Island, Seaside Bay',
+//     photos: ['src/assets/Places for project/Island-Getaway/e5002d66-ea4e-40d4-afa9-100d7e3750fc.png', 'src/assets/Places for project/Island-Getaway/b791662f-d15f-4240-aa34-16eac4470d28.png'],
+//     description: 'Welcome to your private slice of paradise on Coral Island! This exquisite island home offers the perfect blend of luxury and tranquility...',
+//     perks: [''],
+//     extraInfo: 'No smoking inside the villa. Please respect the island\'s local wildlife and environment.',
+//     checkIn: 3,
+//     checkOut: 11,
+//     maxGuests: 6,
+//     price: 400,
+//   },
+// ];
+
+const mongoose = require("mongoose");
+require("dotenv").config();
+
+// Models
+// const User = require("./models/User");
+const Places = require("./models/Place");
+// const Booking = require("./models/Booking");
+
+// Database connection
+mongoose.connect(process.env.MONGO_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+const place = [
+  {
+    title: 'Tranquil Opulence Manor',
+    address: '456 Opulent Lane, Luxe Haven, Prestige Province',
+    photos: ['src/assets/Places for project/Luxury-Villa/d31c2aad-9a5c-431b-a80f-2a50a657eb6d.png', 'src/assets/Places for project/Luxury-Villa/a807d304-1ff0-45d7-bb45-04dd6f81f586.jpg'],
+    description: 'Welcome to 456 Opulent Lane, where Villa Serenitá awaits to envelop you in a world of unparalleled luxury. Nestled in the heart of Luxe Haven, this opulent villa offers...',
+    perks: [''],
+    extraInfo: 'No pets are allowed on the villa premises. Smoking is not permitted indoors; smoking areas are provided. Kindly treat the villa\'s amenities and furnishings with care. Maintain a respectful noise level, especially during nighttime hours.',
+    checkIn: 1500,
+    checkOut: 1500,
+    maxGuests: 6,
+    price: 250,
+  },
+  {
+    title: 'Coral Cove Villa',
+    address: '123 Sun Ray Avenue, Azure Cove, Coastal Paradise',
+    photos: ['src/assets/Places for project/CoralCove-Villa/d9910b92-1455-4735-9e93-c169b6d59713.png', 'src/assets/Places for project/CoralCove-Villa/9e07995d-e8e1-4c4d-a197-981270b98eec.jpg'],
+    description: 'Welcome to 123 Sunray Avenue, where coastal dreams come to life at Seaside Elegance Estate. This exquisite beachfront luxury home offers a harmonious blend...',
+    perks: [''],
+    extraInfo: 'Smoking is prohibited indoors; designated outdoor areas only. Please follow beach guidelines for waste disposal.',
+    checkIn: 1100,
+    checkOut: 1700,
+    maxGuests: 10,
+    price: 350,
+  },
+  {
+    title: 'Dragon Lair Sanctuary',
+    address: '456 Regal Court, Kingston upon Glen, Medievalshire',
+    photos: ['src/assets/thelair.jpg', 'src/assets/DLS-livingroom.jpg'],
+    description: 'Step into a realm of regal charm and enchantment at 456 Regal Court, Eldenshire Castle. This meticulously restored medieval castle transports you back in time...',
+    perks: [''],
+    extraInfo: 'No pets allowed within the castle grounds. Smoking is not permitted inside the castle. Kindly handle the historical artifacts and decor with care. Please observe the castle\'s visiting hours for private sections.',
+    checkIn: 1200,
+    checkOut: 1200,
+    maxGuests: 4,
+    price: 500,
+  },
+  {
+    title: 'Serene Canyon Haven',
+    address: '789 Serenity Way, Tranquil Canyon, Nature Haven',
+    photos: ['src/assets/Places for project/SereneCanyon-Haven/8752df71-1cf3-4eb1-a795-a808d7032f33.png', 'src/assets/Places for project/SereneCanyon-Haven/1e6a9874-97e4-4dbd-8953-608ab4c6afc3.png'],
+    description: 'Elevate your senses at 789 Serenity Way, Canyon Vista Retreat. Tucked away in the heart of nature\'s grandeur, this canyon haven offers a sanctuary of peace...',
+    perks: [''],
+    extraInfo: 'No pets allowed in the canyon retreat. Smoking is restricted to designated outdoor areas. Preserve the natural beauty of the surroundings; no littering. Respect quiet hours between 11:00 PM and 7:00 AM.',
+    checkIn: 1100,
+    checkOut: 1100,
+    maxGuests: 8,
+    price: 250,
+  },  {
+    title: 'Frostpeak Alpine Haven',
+    address: '567 Frost Peak Lane, Snowfall Valley, Mountain Bliss',
+    photos: ['src/assets/Places for project/Snow-Ridge/85d93c37-3208-426f-9051-65ddbedf838a.png, src/assets/Places for project/Snow-Ridge/ea2f662e-4e7b-4106-97b3-40837b06d86f.png'],
+    description: 'Escape to the enchanting beauty of Snowfall Valley and discover the ultimate winter wonderland at 567 Frost Peak Lane. Nestled in the heart of the majestic mountains...',
+    perks: [''],
+    extraInfo: 'Smoking is only allowed in the designated outdoor space. Please be cautious during winter weather conditions. Keep noise levels respectful of neighboring guests.',
+    checkIn: 3,
+    checkOut: 11,
+    maxGuests: 6,
+    price: 300,
+  },  {
+    title: 'Azure Isle Retreat',
+    address: '123 Palm Cove Lane, Coral Island, Seaside Bay',
+    photos: ['src/assets/Places for project/Island-Getaway/e5002d66-ea4e-40d4-afa9-100d7e3750fc.png', 'src/assets/Places for project/Island-Getaway/b791662f-d15f-4240-aa34-16eac4470d28.png'],
+    description: 'Welcome to your private slice of paradise on Coral Island! This exquisite island home offers the perfect blend of luxury and tranquility...',
+    perks: [''],
+    extraInfo: 'No smoking inside the villa. Please respect the island\'s local wildlife and environment.',
+    checkIn: 3,
+    checkOut: 11,
+    maxGuests: 6,
+    price: 400,
+  },
+];
+
+mongoose.connection.close();

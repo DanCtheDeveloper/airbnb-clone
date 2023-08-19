@@ -288,19 +288,6 @@ app.post("/bookings", async (req, res) => {
     });
 });
 
-async function seedData() {
-  // Connect to MongoDB
-  mongoose.connect(process.env.MONGO_URL);
-  
-  if (process.env.RUN_SEEDER === 'true') {
-    seedData().then(() => {
-        console.log('Seeding complete');
-    }).catch(err => {
-        console.error('Error while seeding:', err);
-    });
-}
-
-
 
 app.get(API_BASE_URL + "/bookings", async (req, res) => {
   mongoose.connect(process.env.MONGO_URL);
